@@ -55,6 +55,38 @@ setup(
         "webauthn==0.4.7",
         "xhtml2pdf",
     ],
+    extras_require={
+        "debug": [
+            "django-debug-toolbar",
+        ],
+        "deploy": [
+            "bumpver",
+            "packaging",
+            "pyjwt",
+            "twine",
+        ],
+        "doc": [
+            "sphinx",
+            "sphinx-last-updated-by-git",
+            "sphinx-rtd-theme",
+            "sphinxcontrib-django2",
+        ],
+        "linting": [
+            "black==20.8b1",
+            "pylint",
+            "pylint-django",
+            "pylint-runner",
+            "shellcheck-py",
+        ],
+        "test": [
+            "ipython",
+            "pre-commit",
+        ],
+        "tools": [
+            "coverage",
+            "django-coverage-plugin",
+        ],
+    },
     author="Integreat App Project",
     author_email="info@integreat-app.de",
     description="Content Management System for the Integreat App",

@@ -32,7 +32,7 @@ This workflow gets triggered everytime a commit is pushed to the ``develop`` bra
 pipenv-install
 --------------
 
-This job executes ``pipenv install --dev`` and makes use of the `CircleCI Dependency Cache <https://circleci.com/docs/2.0/caching/>`__.
+This job executes ``pipenv install`` and makes use of the `CircleCI Dependency Cache <https://circleci.com/docs/2.0/caching/>`__.
 It passes the virtual environment ``.venv`` to the subsequent jobs.
 
 .. _circleci-webpack:

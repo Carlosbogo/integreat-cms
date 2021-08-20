@@ -14,7 +14,7 @@ Install dependencies
 
 To install exactly the specified versions of the dependencies, execute::
 
-    pipenv install --dev
+    pipenv install
 
 .. Note::
 
@@ -26,11 +26,7 @@ Add dependencies
 
 When adding new functional dependencies, please add them to :github-source:`setup.py` and execute::
 
-    pipenv install -e .
-
-When adding a new dev dependency ``package``, just use::
-
-    pipenv install --dev package
+    pipenv install
 
 
 Update dependencies

@@ -107,7 +107,7 @@ else
 fi
 
 # Install pip dependencies
-pipenv install --dev
+pipenv install
 echo "✔ Installed Python dependencies" | print_success
 
 # Install pre-commit-hooks if --pre-commit option is given
