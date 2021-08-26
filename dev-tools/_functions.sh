@@ -317,13 +317,13 @@ function configure_redis_cache {
     echo "Checking if local Redis server is running..." | print_info
     if nc -z localhost 6379; then
         # Enable redis cache if redis server is running
-        export DJANGO_REDIS_CACHE=1
+        export INTEGREAT_CMS_REDIS_CACHE=1
         # Check if enhanced connection via unix socket is available (write the location into $REDIS_SOCKET_LOCATION)
         if [[ -f "$REDIS_SOCKET_LOCATION" ]]; then
             # Set location of redis unix socket
-            DJANGO_REDIS_UNIX_SOCKET=$(cat "$REDIS_SOCKET_LOCATION")
-            export DJANGO_REDIS_UNIX_SOCKET
-            echo "✔ Running Redis server on socket $DJANGO_REDIS_UNIX_SOCKET detected. Caching enabled." | print_success
+            INTEGREAT_CMS_REDIS_UNIX_SOCKET=$(cat "$REDIS_SOCKET_LOCATION")
+            export INTEGREAT_CMS_REDIS_UNIX_SOCKET
+            echo "✔ Running Redis server on socket $INTEGREAT_CMS_REDIS_UNIX_SOCKET detected. Caching enabled." | print_success
         else
             echo "✔ Running Redis server on port 6379 detected. Caching enabled." | print_success
         fi
