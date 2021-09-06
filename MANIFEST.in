@@ -1,0 +1,11 @@
+# Include all non-python files in the integreat_cms directory
+graft integreat_cms
+
+# Exclude the static source files since we only need the compiled files in integreat_cms/static/dist
+prune integreat_cms/static/src
+
+# Exclude development settings
+exclude integreat_cms/core/*_settings.py
+
+# Exclude test data
+exclude integreat_cms/cms/fixtures/test_*.json
