@@ -101,7 +101,7 @@ class PushNotification(models.Model):
         :return: The canonical string representation of the push notification
         :rtype: str
         """
-        return f"<PushNotification (id: {self.id}, channel: {self.channel.name}, region: {self.region.slug})>"
+        return f"<PushNotification (id: {self.id}, channel: {self.channel}, region: {self.region.slug})>"
 
     class Meta:
         #: The verbose name of the model
