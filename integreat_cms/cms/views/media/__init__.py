@@ -4,6 +4,7 @@ This package contains all views related to media files
 from .media_actions import (
     get_directory_path_ajax,
     get_directory_content_ajax,
+    query_search_results,
     upload_file_ajax,
     edit_file_ajax,
     delete_file_ajax,

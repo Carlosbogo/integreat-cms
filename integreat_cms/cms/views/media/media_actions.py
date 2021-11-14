@@ -101,6 +101,29 @@ def get_directory_content_ajax(request, region_slug=None):
     return JsonResponse({"data": result})
 
 
+def query_search_results(request, region_slug=None):
+    if request.GET.get("query"):
+        query = request.GET.get("query")
+        print("Query: " + query)
+        region = Region.get_current_region(request)
+
+        media_files = MediaFile.objects.filter(
+            Q(region=region) | Q(region__isnull=True), Q(name__icontains=query)
+        )
+        directories = Directory.objects.filter(
+            Q(region=region) | Q(region__isnull=True), Q(name__icontains=query)
+        )
+
+        result = list(
+            map(lambda d: d.serialize(), list(directories) + list(media_files))
+        )
+
+        return JsonResponse({"data": result})
+
+    else:
+        return get_directory_content_ajax(request, region_slugs)
+
+
 @require_POST
 @login_required
 @region_permission_required

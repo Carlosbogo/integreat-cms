@@ -80,3 +80,14 @@ class Directory(models.Model):
         verbose_name_plural = _("media directories")
         #: The fields which are used to sort the returned objects of a QuerySet
         ordering = ["-region", "name"]
+
+    @classmethod
+    def search(cls, query):
+        """
+        Searches for all directories which match the given `query` in their name.
+        :param query: The query string used for filtering the regions
+        :type query: str
+        :return: A query for all matching objects
+        :rtype: ~django.db.models.QuerySet
+        """
+        return cls.objects.filter(name__icontains=query)

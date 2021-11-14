@@ -18,6 +18,7 @@ import Library from "./library";
 export interface MediaApiPaths {
   getDirectoryPath: string;
   getDirectoryContent: string;
+  getSearchResult:string;
   createDirectory: string;
   editDirectory: string;
   deleteDirectory: string;
@@ -77,6 +78,7 @@ export default function MediaManagement(props: Props) {
           path="/:directoryId?"
           showMessage={showMessage}
           loadingState={[isLoading, setLoading]}
+          newSearch={false}
           {...props}
         />
       </Router>

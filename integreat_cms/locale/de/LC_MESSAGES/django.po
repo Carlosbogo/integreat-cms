@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-11 12:19+0000\n"
+"POT-Creation-Date: 2021-11-17 15:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Integreat <info@integreat-app.de>\n"
 "Language-Team: Integreat <info@integreat-app.de>\n"
@@ -2384,7 +2384,7 @@ msgstr "Vorschaubild-URL"
 #: cms/models/offers/offer_template.py:30 cms/templates/_tinymce_config.html:46
 #: cms/templates/linkcheck/links_by_filter.html:51
 #: cms/templates/offer_templates/offer_template_list.html:22
-#: cms/views/media/media_context_mixin.py:57
+#: cms/views/media/media_context_mixin.py:58
 msgid "URL"
 msgstr "URL"
 
@@ -3148,6 +3148,7 @@ msgstr "Integreat Redaktionssystem"
 
 #: cms/templates/_search_input.html:13 cms/templates/_search_input.html:22
 #: cms/templates/events/_event_filter_form.html:37
+#: cms/views/media/media_context_mixin.py:56
 msgid "Search"
 msgstr "Suchen"
 
@@ -3467,15 +3468,15 @@ msgstr "Nachricht abschicken"
 #: cms/templates/chat/_chat_widget.html:28
 #: cms/templates/statistics/_statistics_widget.html:22
 #: cms/templates/statistics/statistics_overview.html:18
-#: cms/views/media/media_context_mixin.py:79
+#: cms/views/media/media_context_mixin.py:80
 msgid "A network error has occurred."
 msgstr "Ein Netzwerkfehler ist aufgetreten."
 
 #: cms/templates/chat/_chat_widget.html:28
 #: cms/templates/statistics/_statistics_widget.html:22
 #: cms/templates/statistics/statistics_overview.html:18
-#: cms/views/media/media_context_mixin.py:76
-#: cms/views/media/media_context_mixin.py:81
+#: cms/views/media/media_context_mixin.py:77
+#: cms/views/media/media_context_mixin.py:82
 msgid "Please try again later."
 msgstr "Bitte versuchen Sie es später erneut."
 
@@ -5746,35 +5747,35 @@ msgstr "Links werden nicht mehr ignoriert"
 msgid "Links were successfully checked"
 msgstr "Links wurden erfolgreich geprüft"
 
-#: cms/views/media/media_actions.py:146
+#: cms/views/media/media_actions.py:169
 msgid "File \"{}\" was uploaded successfully"
 msgstr "Datei \"{}\"wurde erfolgreich hochgeladen"
 
-#: cms/views/media/media_actions.py:197 cms/views/media/media_actions.py:414
+#: cms/views/media/media_actions.py:220 cms/views/media/media_actions.py:437
 msgid "No changes detected"
 msgstr "Keine Änderungen vorgenommen"
 
-#: cms/views/media/media_actions.py:212 cms/views/media/media_actions.py:268
+#: cms/views/media/media_actions.py:235 cms/views/media/media_actions.py:291
 msgid "File \"{}\" was saved successfully"
 msgstr "Datei \"{}\" wurde erfolgreich gespeichert"
 
-#: cms/views/media/media_actions.py:314
+#: cms/views/media/media_actions.py:337
 msgid "File \"{}\" was successfully deleted"
 msgstr "Datei \"{}\" wurde erfolgreich gelöscht"
 
-#: cms/views/media/media_actions.py:366
+#: cms/views/media/media_actions.py:389
 msgid "Directory \"{}\" was created successfully"
 msgstr "Verzeichnis \"{}\" wurde erfolgreich erstellt"
 
-#: cms/views/media/media_actions.py:427
+#: cms/views/media/media_actions.py:450
 msgid "Directory \"{}\" was saved successfully"
 msgstr "Verzeichnis \"{}\" wurde erfolgreich gespeichert"
 
-#: cms/views/media/media_actions.py:471
+#: cms/views/media/media_actions.py:494
 msgid "Directory \"{}\" cannot be deleted because it is not empty"
 msgstr "Verzeichnis \"{}\" kann nicht gelöscht werden, da es nicht leer ist"
 
-#: cms/views/media/media_actions.py:484
+#: cms/views/media/media_actions.py:507
 msgid "Directory \"{}\" was successfully deleted"
 msgstr "Verzeichnis \"{}\" wurde erfolgreich gelöscht"
 
@@ -5858,56 +5859,56 @@ msgstr "Datei auswählen"
 msgid "Replace file"
 msgstr "Datei ersetzen"
 
-#: cms/views/media/media_context_mixin.py:56
+#: cms/views/media/media_context_mixin.py:57
 msgid "File name:"
 msgstr "Dateiname:"
 
-#: cms/views/media/media_context_mixin.py:58
+#: cms/views/media/media_context_mixin.py:59
 msgid "Directory name:"
 msgstr "Verzeichnisname:"
 
-#: cms/views/media/media_context_mixin.py:59
+#: cms/views/media/media_context_mixin.py:60
 msgid "Filetype:"
 msgstr "Dateityp:"
 
-#: cms/views/media/media_context_mixin.py:60
+#: cms/views/media/media_context_mixin.py:61
 msgid "File uploaded on:"
 msgstr "Datei hochgeladen am:"
 
-#: cms/views/media/media_context_mixin.py:61
+#: cms/views/media/media_context_mixin.py:62
 msgid "Directory created on:"
 msgstr "Verzeichnis erstellt am:"
 
-#: cms/views/media/media_context_mixin.py:62
+#: cms/views/media/media_context_mixin.py:63
 msgid "Alternative text:"
 msgstr "Alternativer Text:"
 
-#: cms/views/media/media_context_mixin.py:63
+#: cms/views/media/media_context_mixin.py:64
 msgid "Enter directory name here"
 msgstr "Verzeichnisname hier eingeben"
 
-#: cms/views/media/media_context_mixin.py:64
+#: cms/views/media/media_context_mixin.py:65
 msgid "This file is read-only and cannot be edited."
 msgstr "Diese Datei ist schreibgeschützt und kann nicht bearbeitet werden."
 
-#: cms/views/media/media_context_mixin.py:66
+#: cms/views/media/media_context_mixin.py:67
 msgid "This directory is read-only and cannot be edited."
 msgstr ""
 "Dieses Verzeichnis ist schreibgeschützt und kann nicht bearbeitet werden."
 
-#: cms/views/media/media_context_mixin.py:68
+#: cms/views/media/media_context_mixin.py:69
 msgid "Only images can be selected as an icon."
 msgstr "Es können nur Bilder als Icon ausgewählt werden."
 
-#: cms/views/media/media_context_mixin.py:70
+#: cms/views/media/media_context_mixin.py:71
 msgid "Please confirm that you really want to delete this file"
 msgstr "Bitte bestätigen Sie, dass diese Datei gelöscht werden soll"
 
-#: cms/views/media/media_context_mixin.py:73
+#: cms/views/media/media_context_mixin.py:74
 msgid "Please confirm that you really want to delete this directory"
 msgstr "Bitte bestätigen Sie, dass dieses Verzeichnis gelöscht werden soll"
 
-#: cms/views/media/media_context_mixin.py:76
+#: cms/views/media/media_context_mixin.py:77
 msgid "An error has occurred."
 msgstr "Es ist ein Fehler aufgetreten."
 

@@ -49,6 +49,11 @@ media_ajax_urlpatterns = [
                     name="mediacenter_get_directory_content",
                 ),
                 url(
+                    r"^search-content$",
+                    media.query_search_results,
+                    name="mediacenter_get_search_content",
+                ),
+                url(
                     r"^upload-file$",
                     media.upload_file_ajax,
                     name="mediacenter_upload_file",
@@ -147,7 +152,18 @@ urlpatterns = [
             ]
         ),
     ),
-    url(r"^media-library/$", media.AdminMediaListView.as_view(), name="media_admin"),
+    url(
+        r"^media-library/",
+        include(
+            [
+                url(r"^$", media.AdminMediaListView.as_view(), name="media_admin"),
+                url(r"search$", utils.search_content_ajax, name="media_search"),
+                url(
+                    r"search_results", media.query_search_results, name="search_results"
+                ),
+            ]
+        ),
+    ),
     url(
         r"^languages/",
         include(

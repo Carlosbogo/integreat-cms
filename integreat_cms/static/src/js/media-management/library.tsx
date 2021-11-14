@@ -28,6 +28,7 @@ interface Props {
   selectionMode?: boolean;
   onlyImage?: boolean;
   selectMedia?: (file: File) => any;
+  newSearch: boolean;
 }
 
 export default function Library({
@@ -43,6 +44,7 @@ export default function Library({
   selectionMode,
   onlyImage,
   selectMedia,
+  newSearch,
 }: Props) {
   // The directory path contains the current directory and all its parents
   const [directoryPath, setDirectoryPath] = useState<Directory[]>([]);
@@ -184,14 +186,63 @@ export default function Library({
     }
   }, [directory]);
 
+  useEffect(() =>{
+    if (apiEndpoints.getSearchResult){
+      newSearch=false;
+      console.debug("query search was applied");
+      let fileIndexState = null;
+
+      DirectoryContent({
+        fileIndexState,
+        directoryContent,
+        mediaTranslations,
+        selectionMode,
+        globalEdit,
+      }
+
+      )
+
+      /*getDirectoryInfo(
+        apiEndpoints.getSearchResult,
+        directoryId,
+        setDirectoryContent
+      )*/
+  }}, [newSearch, refresh])
+
   return (
     <div className={`flex flex-col flex-grow`}>
       <h1 className="w-full heading p-2">{mediaTranslations.heading_media_library}</h1>
       <div className="flex flex-wrap justify-between gap-x-2 gap-y-4">
-        <form class="table-search relative">
-          <Search class="absolute m-2" />
-          <input type="search" class="h-full py-2 pl-10 pr-4 rounded shadow" />
-        </form>
+        
+        <div id="table-search" class="flex">
+          <form class="relative" action="search_results">
+              <input
+                  data-default-value=""
+                  type="search"
+                  name="query"
+                  autocomplete="off"
+                  id="table-search-input"
+                  placeholder={mediaTranslations.btn_search}
+                  class="default-value rounded-r-none"
+                  data-url="search"
+                  data-object-type="media"
+                  data-archived="false"
+              ></input>
+                <div id="table-search-suggestions" class="absolute hidden shadow rounded-b top-full bg-graz-200 w-full z-10 max-h-60 overflow-y-auto cursor-pointer">
+                </div>
+              
+          </form>
+          <button title={mediaTranslations.btn_search}
+                  class="bg-blue-500 hover:bg-blue-600 text-white rounded-r py-2 px-3">
+                  onClick={()=> submitForm}
+              <i data-feather="search" class="w-5"></i>
+          </button>
+        </div>
+
+
+
+
+        
         {!selectionMode && (globalEdit || !directory?.isGlobal) && (
           <div className="flex flex-wrap justify-start gap-2">
             <button

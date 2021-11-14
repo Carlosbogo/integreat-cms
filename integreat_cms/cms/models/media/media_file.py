@@ -234,3 +234,14 @@ class MediaFile(models.Model):
             ("upload_mediafile", "Can upload media file"),
             ("replace_mediafile", "Can replace media file"),
         )
+
+    @classmethod
+    def search(cls, query):
+        """
+        Searches for all media files which match the given `query` in their name.
+        :param query: The query string used for filtering the regions
+        :type query: str
+        :return: A query for all matching objects
+        :rtype: ~django.db.models.QuerySet
+        """
+        return cls.objects.filter(name__icontains=query)
